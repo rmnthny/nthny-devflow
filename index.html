@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NTHNY DevFlow — an early-stage developer workflow prototype for organizing software projects, requirements, code reviews, and documentation." />
+  <meta name="theme-color" content="#090a0d" />
+  <title>NTHNY DevFlow v0.1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard" data-route="dashboard" aria-label="NTHNY DevFlow home">
+        <svg class="brand-mark" viewBox="0 0 512 512" aria-hidden="true">
+          <defs>
+            <linearGradient id="gold" x1="76" y1="62" x2="430" y2="446" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F8D95A"/>
+              <stop offset="1" stop-color="#DDAF18"/>
+            </linearGradient>
+          </defs>
+          <rect width="512" height="512" rx="118" fill="#0B0C0F"/>
+          <rect x="54" y="54" width="404" height="404" rx="96" stroke="#2A2D35" stroke-width="10"/>
+          <path d="M112 356V156H158L280 304V156H330V356H287L163 205V356H112Z" fill="white"/>
+          <path d="M351 156H402L342 245L404 356H353L313 280L271 356H222L284 244L225 156H276L313 211L351 156Z" fill="url(#gold)"/>
+          <circle cx="400" cy="114" r="18" fill="#F4C833"/>
+        </svg>
+        <div>
+          <strong>NTHNY</strong>
+          <span>DevFlow</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <button class="nav-item active" data-route="dashboard">
+          <span class="nav-icon">◫</span><span>Dashboard</span>
+        </button>
+        <button class="nav-item" data-route="projects">
+          <span class="nav-icon">▣</span><span>Projects</span>
+        </button>
+        <button class="nav-item" data-route="requirements">
+          <span class="nav-icon">✓</span><span>Requirements</span>
+        </button>
+        <button class="nav-item" data-route="reviews">
+          <span class="nav-icon">⌁</span><span>Code Reviews</span>
+        </button>
+        <button class="nav-item" data-route="docs">
+          <span class="nav-icon">≡</span><span>Documentation</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="status-pill"><span></span> Prototype v0.1</div>
+        <p>Local-first demo. Data stays in this browser.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Toggle menu">☰</button>
+        <div>
+          <p class="eyebrow">NTHNY DevFlow</p>
+          <h1 id="pageTitle">Dashboard</h1>
+        </div>
+        <div class="top-actions">
+          <button class="btn ghost" id="exportBtn">Export data</button>
+          <button class="btn primary" id="newProjectTop">+ New project</button>
+        </div>
+      </header>
+
+      <section id="view"></section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">NTHNY DevFlow</p>
+          <h2 id="modalTitle">Modal</h2>
+        </div>
+        <button class="icon-btn" id="modalClose" aria-label="Close">×</button>
+      </div>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
